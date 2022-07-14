@@ -108,7 +108,7 @@
   2. function definition is a more powerful means of abstraction: binds names to expressions -> evaluated every time the function is called.
 
      ```python
-     # first line -> function signature: indicates how many arguments a function takes
+     # first line -> function signature: indicates how many arguments a function takes (has all the information needed to create a local frame.)
      def <name>(<formal parameters>):
          # function body -> defines the computational process expressed by a function
          return <return expression>
@@ -125,3 +125,21 @@
      1. add a local frame, forming a new environment
      2. bind the function's formal parameters to its arguments in that frame
      3. execute the body of the function in that new environment.
+
+- ___Looking up names in environments___
+  every expression is evaluated in the context of an environment. so far, the current environment is either:
+
+  1. the global frame alone
+  2. a local frame, followed by the global frame. -> totally two frames in the environment.
+
+  __Note :__ 
+
+  1. an environment is a sequence of frames; (a frame is a binding between names and values)
+  2. a name evaluates to the value bound to that name in the earliest frame of the current environment in which that name is found. -> e.g. first look for the name in the local frame, if not found, look for it in the global frame.
+
+- ___Debugging Tech___
+
+  Look for all the information in this website: 
+  https://inst.eecs.berkeley.edu/~cs61a/su20/articles/debugging.html
+
+- 
